@@ -1,268 +1,298 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyCalculator – Kalkulator Presisi Tinggi</title>
-  <meta name="description" content="Kalkulator presisi tinggi dengan akurasi hingga 16 digit desimal untuk kebutuhan finansial dan teknik tingkat lanjut." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCalculator – Kalkulator Presisi Tinggi</title>
+    <meta name="description"
+        content="Kalkulator presisi tinggi dengan akurasi hingga 16 digit desimal untuk kebutuhan finansial dan teknik tingkat lanjut." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-top">
-      <div class="sidebar-section-label">Modes</div>
-      <div class="sidebar-section-sub">Switch calculator type</div>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-section-label">Modes</div>
+            <div class="sidebar-section-sub">Switch calculator type</div>
 
-      <nav class="sidebar-nav">
-        <button class="nav-item active" id="nav-basic" onclick="switchMode('basic')">
-          <span class="nav-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-            </svg>
-          </span>
-          Basic
-        </button>
-        <button class="nav-item" id="nav-scientific" onclick="switchMode('scientific')">
-          <span class="nav-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-            </svg>
-          </span>
-          Scientific
-        </button>
-        <button class="nav-item" id="nav-financial" onclick="switchMode('financial')">
-          <span class="nav-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
-            </svg>
-          </span>
-          Financial
-        </button>
-      </nav>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" id="nav-basic" onclick="switchMode('basic')">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg>
+                    </span>
+                    Basic
+                </button>
+                <button class="nav-item" id="nav-scientific" onclick="switchMode('scientific')">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
+                        </svg>
+                    </span>
+                    Scientific
+                </button>
+                <button class="nav-item" id="nav-financial" onclick="switchMode('financial')">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                        </svg>
+                    </span>
+                    Financial
+                </button>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="upgrade-btn" id="upgrade-btn" onclick="openPaymentModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                Upgrade to Pro
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Top bar icons -->
+        <div class="topbar">
+            <button class="icon-btn" id="history-btn" title="History" aria-label="History">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+            </button>
+            <button class="icon-btn" id="settings-btn" title="Settings" aria-label="Settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Calculator card -->
+        <div class="calculator-wrapper" id="calculator-wrapper">
+            <div class="calculator-card" id="calculator-card">
+
+                <!-- Display -->
+                <div class="display" id="display-area">
+                    <div class="display-expression" id="display-expression"></div>
+                    <div class="display-value" id="display-value">0</div>
+                </div>
+
+                <!-- Basic keypad -->
+                <div class="keypad" id="keypad-basic">
+                    <!-- Row 1 -->
+                    <button class="key key-func" id="key-clear" onclick="clearAll()">C</button>
+                    <button class="key key-func" id="key-divide" onclick="inputOperator('÷')">÷</button>
+                    <button class="key key-func" id="key-multiply" onclick="inputOperator('×')">×</button>
+                    <button class="key key-backspace" id="key-backspace" onclick="backspace()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+                            <line x1="18" y1="9" x2="12" y2="15" />
+                            <line x1="12" y1="9" x2="18" y2="15" />
+                        </svg>
+                    </button>
+
+                    <!-- Row 2 -->
+                    <button class="key key-num" id="key-7" onclick="inputDigit('7')">7</button>
+                    <button class="key key-num" id="key-8" onclick="inputDigit('8')">8</button>
+                    <button class="key key-num" id="key-9" onclick="inputDigit('9')">9</button>
+                    <button class="key key-op key-minus" id="key-minus" onclick="inputOperator('−')">−</button>
+
+                    <!-- Row 3 -->
+                    <button class="key key-num" id="key-4" onclick="inputDigit('4')">4</button>
+                    <button class="key key-num" id="key-5" onclick="inputDigit('5')">5</button>
+                    <button class="key key-num" id="key-6" onclick="inputDigit('6')">6</button>
+                    <button class="key key-op key-plus" id="key-plus" onclick="inputOperator('+')">+</button>
+
+                    <!-- Row 4 + 5 merged -->
+                    <div class="key-subgrid">
+                        <button class="key key-num" id="key-1" onclick="inputDigit('1')">1</button>
+                        <button class="key key-num" id="key-2" onclick="inputDigit('2')">2</button>
+                        <button class="key key-num" id="key-3" onclick="inputDigit('3')">3</button>
+                        <button class="key key-num key-wide" id="key-0" onclick="inputDigit('0')">0</button>
+                        <button class="key key-num" id="key-dot" onclick="inputDot()">.</button>
+                    </div>
+                    <button class="key key-equals" id="key-equals" onclick="calculate()">＝</button>
+                </div>
+
+                <!-- Scientific keypad (hidden by default) -->
+                <div class="keypad keypad-scientific hidden" id="keypad-scientific">
+                    <button class="key key-func-sci" id="sci-sin" onclick="sciFunc('sin')">sin</button>
+                    <button class="key key-func-sci" id="sci-cos" onclick="sciFunc('cos')">cos</button>
+                    <button class="key key-func-sci" id="sci-tan" onclick="sciFunc('tan')">tan</button>
+                    <button class="key key-func-sci" id="sci-log" onclick="sciFunc('log')">log</button>
+                    <button class="key key-func-sci" id="sci-ln" onclick="sciFunc('ln')">ln</button>
+                    <button class="key key-func-sci" id="sci-sqrt" onclick="sciFunc('sqrt')">√</button>
+                    <button class="key key-func-sci" id="sci-pow2" onclick="sciFunc('pow2')">x²</button>
+                    <button class="key key-func-sci" id="sci-pi" onclick="sciFunc('pi')">π</button>
+                    <button class="key key-func-sci" id="sci-e" onclick="sciFunc('e')">e</button>
+                    <button class="key key-func-sci" id="sci-pct" onclick="sciFunc('pct')">%</button>
+
+                    <button class="key key-func" id="sci-clear" onclick="clearAll()">C</button>
+                    <button class="key key-func" id="sci-divide" onclick="inputOperator('÷')">÷</button>
+                    <button class="key key-func" id="sci-multiply" onclick="inputOperator('×')">×</button>
+                    <button class="key key-backspace" id="sci-backspace" onclick="backspace()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+                            <line x1="18" y1="9" x2="12" y2="15" />
+                            <line x1="12" y1="9" x2="18" y2="15" />
+                        </svg>
+                    </button>
+
+                    <button class="key key-num" id="sci-7" onclick="inputDigit('7')">7</button>
+                    <button class="key key-num" id="sci-8" onclick="inputDigit('8')">8</button>
+                    <button class="key key-num" id="sci-9" onclick="inputDigit('9')">9</button>
+                    <button class="key key-op key-minus" id="sci-minus" onclick="inputOperator('−')">−</button>
+
+                    <button class="key key-num" id="sci-4" onclick="inputDigit('4')">4</button>
+                    <button class="key key-num" id="sci-5" onclick="inputDigit('5')">5</button>
+                    <button class="key key-num" id="sci-6" onclick="inputDigit('6')">6</button>
+                    <button class="key key-op key-plus" id="sci-plus" onclick="inputOperator('+')">+</button>
+
+                    <div class="key-subgrid">
+                        <button class="key key-num" id="sci-1" onclick="inputDigit('1')">1</button>
+                        <button class="key key-num" id="sci-2" onclick="inputDigit('2')">2</button>
+                        <button class="key key-num" id="sci-3" onclick="inputDigit('3')">3</button>
+                        <button class="key key-num key-wide" id="sci-0" onclick="inputDigit('0')">0</button>
+                        <button class="key key-num" id="sci-dot" onclick="inputDot()">.</button>
+                    </div>
+                    <button class="key key-equals" id="sci-equals" onclick="calculate()">＝</button>
+                </div>
+
+                <!-- Financial keypad (hidden by default) -->
+                <div class="keypad keypad-financial hidden" id="keypad-financial">
+                    <button class="key key-func-sci fin-label" id="fin-tax-plus" onclick="finFunc('tax+')">TAX+</button>
+                    <button class="key key-func-sci fin-label" id="fin-tax-minus"
+                        onclick="finFunc('tax-')">TAX−</button>
+                    <button class="key key-func-sci fin-label" id="fin-gst" onclick="finFunc('gst')">GST</button>
+                    <button class="key key-func-sci fin-label" id="fin-pct" onclick="sciFunc('pct')">%</button>
+                    <button class="key key-func-sci fin-label" id="fin-sqrt" onclick="sciFunc('sqrt')">√</button>
+
+                    <button class="key key-func" id="fin-clear" onclick="clearAll()">C</button>
+                    <button class="key key-func" id="fin-divide" onclick="inputOperator('÷')">÷</button>
+                    <button class="key key-func" id="fin-multiply" onclick="inputOperator('×')">×</button>
+                    <button class="key key-backspace" id="fin-backspace" onclick="backspace()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+                            <line x1="18" y1="9" x2="12" y2="15" />
+                            <line x1="12" y1="9" x2="18" y2="15" />
+                        </svg>
+                    </button>
+
+                    <button class="key key-num" id="fin-7" onclick="inputDigit('7')">7</button>
+                    <button class="key key-num" id="fin-8" onclick="inputDigit('8')">8</button>
+                    <button class="key key-num" id="fin-9" onclick="inputDigit('9')">9</button>
+                    <button class="key key-op key-minus" id="fin-minus" onclick="inputOperator('−')">−</button>
+
+                    <button class="key key-num" id="fin-4" onclick="inputDigit('4')">4</button>
+                    <button class="key key-num" id="fin-5" onclick="inputDigit('5')">5</button>
+                    <button class="key key-num" id="fin-6" onclick="inputDigit('6')">6</button>
+                    <button class="key key-op key-plus" id="fin-plus" onclick="inputOperator('+')">+</button>
+
+                    <div class="key-subgrid">
+                        <button class="key key-num" id="fin-1" onclick="inputDigit('1')">1</button>
+                        <button class="key key-num" id="fin-2" onclick="inputDigit('2')">2</button>
+                        <button class="key key-num" id="fin-3" onclick="inputDigit('3')">3</button>
+                        <button class="key key-num key-wide" id="fin-0" onclick="inputDigit('0')">0</button>
+                        <button class="key key-num" id="fin-dot" onclick="inputDot()">.</button>
+                    </div>
+                    <button class="key key-equals" id="fin-equals" onclick="calculate()">＝</button>
+                </div>
+
+            </div>
+            <p class="calc-footer-text">Akurasi presisi hingga 16 digit desimal untuk<br>kebutuhan finansial dan teknik
+                tingkat lanjut.</p>
+        </div>
+    </main>
+
+    <!-- ====== PAYMENT MODAL ====== -->
+    <div class="modal-overlay" id="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-card" id="modal-card">
+
+            <!-- Blurred result preview -->
+            <div class="result-preview" id="result-preview">
+                <span class="result-blur" id="result-blur-text">????</span>
+                <div class="lock-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="modal-body" id="modal-body-main">
+                <h2 class="modal-title" id="modal-title">🔒 Hasil Terkunci</h2>
+                <p class="modal-desc">
+                    Untuk melihat hasil perhitungan ini, silakan dukung developer melalui Saweria dan masukkan kode
+                    aktivasi yang kamu dapatkan.
+                </p>
+
+                <a class="saweria-btn" id="saweria-link" href="https://saweria.co/yannkovalskia" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                    </svg>
+                    Donasi via Saweria
+                </a>
+
+                <div class="code-section">
+                    <label class="code-label" for="activation-code">Masukkan Kode Aktivasi</label>
+                    <div class="code-input-row">
+                        <input type="text" id="activation-code" class="code-input" placeholder="Contoh: YANN1107"
+                            maxlength="12" autocomplete="off" spellcheck="false" />
+                        <button class="verify-btn" id="verify-btn" onclick="verifyCode()">Verifikasi</button>
+                    </div>
+                    <div class="code-message hidden" id="code-message"></div>
+                </div>
+
+                <button class="modal-close-text" id="modal-dismiss-btn" onclick="closeModal(true)">Tutup &amp;
+                    kembali</button>
+            </div>
+
+            <!-- Success state -->
+            <div class="modal-success hidden" id="modal-success">
+                <div class="success-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                </div>
+                <h2 class="modal-title success-title">Aktivasi Berhasil! 🎉</h2>
+                <p class="modal-desc">Terima kasih telah mendukung! Hasil perhitungan kamu sudah terbuka.</p>
+            </div>
+
+        </div>
     </div>
 
-    <div class="sidebar-bottom">
-      <button class="upgrade-btn" id="upgrade-btn" onclick="openPaymentModal()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Upgrade to Pro
-      </button>
-    </div>
-  </aside>
-
-  <!-- Main content -->
-  <main class="main-content">
-    <!-- Top bar icons -->
-    <div class="topbar">
-      <button class="icon-btn" id="history-btn" title="History" aria-label="History">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-        </svg>
-      </button>
-      <button class="icon-btn" id="settings-btn" title="Settings" aria-label="Settings">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Calculator card -->
-    <div class="calculator-wrapper" id="calculator-wrapper">
-      <div class="calculator-card" id="calculator-card">
-
-        <!-- Display -->
-        <div class="display" id="display-area">
-          <div class="display-expression" id="display-expression"></div>
-          <div class="display-value" id="display-value">0</div>
-        </div>
-
-        <!-- Basic keypad -->
-        <div class="keypad" id="keypad-basic">
-          <!-- Row 1 -->
-          <button class="key key-func" id="key-clear" onclick="clearAll()">C</button>
-          <button class="key key-func" id="key-divide" onclick="inputOperator('÷')">÷</button>
-          <button class="key key-func" id="key-multiply" onclick="inputOperator('×')">×</button>
-          <button class="key key-backspace" id="key-backspace" onclick="backspace()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>
-            </svg>
-          </button>
-
-          <!-- Row 2 -->
-          <button class="key key-num" id="key-7" onclick="inputDigit('7')">7</button>
-          <button class="key key-num" id="key-8" onclick="inputDigit('8')">8</button>
-          <button class="key key-num" id="key-9" onclick="inputDigit('9')">9</button>
-          <button class="key key-op key-minus" id="key-minus" onclick="inputOperator('−')">−</button>
-
-          <!-- Row 3 -->
-          <button class="key key-num" id="key-4" onclick="inputDigit('4')">4</button>
-          <button class="key key-num" id="key-5" onclick="inputDigit('5')">5</button>
-          <button class="key key-num" id="key-6" onclick="inputDigit('6')">6</button>
-          <button class="key key-op key-plus" id="key-plus" onclick="inputOperator('+')">+</button>
-
-          <!-- Row 4 + 5 merged -->
-          <div class="key-subgrid">
-            <button class="key key-num" id="key-1" onclick="inputDigit('1')">1</button>
-            <button class="key key-num" id="key-2" onclick="inputDigit('2')">2</button>
-            <button class="key key-num" id="key-3" onclick="inputDigit('3')">3</button>
-            <button class="key key-num key-wide" id="key-0" onclick="inputDigit('0')">0</button>
-            <button class="key key-num" id="key-dot" onclick="inputDot()">.</button>
-          </div>
-          <button class="key key-equals" id="key-equals" onclick="calculate()">＝</button>
-        </div>
-
-        <!-- Scientific keypad (hidden by default) -->
-        <div class="keypad keypad-scientific hidden" id="keypad-scientific">
-          <button class="key key-func-sci" id="sci-sin" onclick="sciFunc('sin')">sin</button>
-          <button class="key key-func-sci" id="sci-cos" onclick="sciFunc('cos')">cos</button>
-          <button class="key key-func-sci" id="sci-tan" onclick="sciFunc('tan')">tan</button>
-          <button class="key key-func-sci" id="sci-log" onclick="sciFunc('log')">log</button>
-          <button class="key key-func-sci" id="sci-ln" onclick="sciFunc('ln')">ln</button>
-          <button class="key key-func-sci" id="sci-sqrt" onclick="sciFunc('sqrt')">√</button>
-          <button class="key key-func-sci" id="sci-pow2" onclick="sciFunc('pow2')">x²</button>
-          <button class="key key-func-sci" id="sci-pi" onclick="sciFunc('pi')">π</button>
-          <button class="key key-func-sci" id="sci-e" onclick="sciFunc('e')">e</button>
-          <button class="key key-func-sci" id="sci-pct" onclick="sciFunc('pct')">%</button>
-
-          <button class="key key-func" id="sci-clear" onclick="clearAll()">C</button>
-          <button class="key key-func" id="sci-divide" onclick="inputOperator('÷')">÷</button>
-          <button class="key key-func" id="sci-multiply" onclick="inputOperator('×')">×</button>
-          <button class="key key-backspace" id="sci-backspace" onclick="backspace()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>
-            </svg>
-          </button>
-
-          <button class="key key-num" id="sci-7" onclick="inputDigit('7')">7</button>
-          <button class="key key-num" id="sci-8" onclick="inputDigit('8')">8</button>
-          <button class="key key-num" id="sci-9" onclick="inputDigit('9')">9</button>
-          <button class="key key-op key-minus" id="sci-minus" onclick="inputOperator('−')">−</button>
-
-          <button class="key key-num" id="sci-4" onclick="inputDigit('4')">4</button>
-          <button class="key key-num" id="sci-5" onclick="inputDigit('5')">5</button>
-          <button class="key key-num" id="sci-6" onclick="inputDigit('6')">6</button>
-          <button class="key key-op key-plus" id="sci-plus" onclick="inputOperator('+')">+</button>
-
-          <div class="key-subgrid">
-            <button class="key key-num" id="sci-1" onclick="inputDigit('1')">1</button>
-            <button class="key key-num" id="sci-2" onclick="inputDigit('2')">2</button>
-            <button class="key key-num" id="sci-3" onclick="inputDigit('3')">3</button>
-            <button class="key key-num key-wide" id="sci-0" onclick="inputDigit('0')">0</button>
-            <button class="key key-num" id="sci-dot" onclick="inputDot()">.</button>
-          </div>
-          <button class="key key-equals" id="sci-equals" onclick="calculate()">＝</button>
-        </div>
-
-        <!-- Financial keypad (hidden by default) -->
-        <div class="keypad keypad-financial hidden" id="keypad-financial">
-          <button class="key key-func-sci fin-label" id="fin-tax-plus" onclick="finFunc('tax+')">TAX+</button>
-          <button class="key key-func-sci fin-label" id="fin-tax-minus" onclick="finFunc('tax-')">TAX−</button>
-          <button class="key key-func-sci fin-label" id="fin-gst" onclick="finFunc('gst')">GST</button>
-          <button class="key key-func-sci fin-label" id="fin-pct" onclick="sciFunc('pct')">%</button>
-          <button class="key key-func-sci fin-label" id="fin-sqrt" onclick="sciFunc('sqrt')">√</button>
-
-          <button class="key key-func" id="fin-clear" onclick="clearAll()">C</button>
-          <button class="key key-func" id="fin-divide" onclick="inputOperator('÷')">÷</button>
-          <button class="key key-func" id="fin-multiply" onclick="inputOperator('×')">×</button>
-          <button class="key key-backspace" id="fin-backspace" onclick="backspace()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>
-            </svg>
-          </button>
-
-          <button class="key key-num" id="fin-7" onclick="inputDigit('7')">7</button>
-          <button class="key key-num" id="fin-8" onclick="inputDigit('8')">8</button>
-          <button class="key key-num" id="fin-9" onclick="inputDigit('9')">9</button>
-          <button class="key key-op key-minus" id="fin-minus" onclick="inputOperator('−')">−</button>
-
-          <button class="key key-num" id="fin-4" onclick="inputDigit('4')">4</button>
-          <button class="key key-num" id="fin-5" onclick="inputDigit('5')">5</button>
-          <button class="key key-num" id="fin-6" onclick="inputDigit('6')">6</button>
-          <button class="key key-op key-plus" id="fin-plus" onclick="inputOperator('+')">+</button>
-
-          <div class="key-subgrid">
-            <button class="key key-num" id="fin-1" onclick="inputDigit('1')">1</button>
-            <button class="key key-num" id="fin-2" onclick="inputDigit('2')">2</button>
-            <button class="key key-num" id="fin-3" onclick="inputDigit('3')">3</button>
-            <button class="key key-num key-wide" id="fin-0" onclick="inputDigit('0')">0</button>
-            <button class="key key-num" id="fin-dot" onclick="inputDot()">.</button>
-          </div>
-          <button class="key key-equals" id="fin-equals" onclick="calculate()">＝</button>
-        </div>
-
-      </div>
-      <p class="calc-footer-text">Akurasi presisi hingga 16 digit desimal untuk<br>kebutuhan finansial dan teknik tingkat lanjut.</p>
-    </div>
-  </main>
-
-  <!-- ====== PAYMENT MODAL ====== -->
-  <div class="modal-overlay" id="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title">
-    <div class="modal-card" id="modal-card">
-
-      <!-- Blurred result preview -->
-      <div class="result-preview" id="result-preview">
-        <span class="result-blur" id="result-blur-text">????</span>
-        <div class="lock-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="modal-body" id="modal-body-main">
-        <h2 class="modal-title" id="modal-title">🔒 Hasil Terkunci</h2>
-        <p class="modal-desc">
-          Untuk melihat hasil perhitungan ini, silakan dukung developer melalui Saweria dan masukkan kode aktivasi yang kamu dapatkan.
-        </p>
-
-        <a class="saweria-btn" id="saweria-link" href="https://saweria.co/yannkovalski" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-          </svg>
-          Donasi via Saweria
-        </a>
-
-        <div class="code-section">
-          <label class="code-label" for="activation-code">Masukkan Kode Aktivasi</label>
-          <div class="code-input-row">
-            <input
-              type="text"
-              id="activation-code"
-              class="code-input"
-              placeholder="Contoh: YANN1107"
-              maxlength="12"
-              autocomplete="off"
-              spellcheck="false"
-            />
-            <button class="verify-btn" id="verify-btn" onclick="verifyCode()">Verifikasi</button>
-          </div>
-          <div class="code-message hidden" id="code-message"></div>
-        </div>
-
-        <button class="modal-close-text" id="modal-dismiss-btn" onclick="closeModal(true)">Tutup &amp; kembali</button>
-      </div>
-
-      <!-- Success state -->
-      <div class="modal-success hidden" id="modal-success">
-        <div class="success-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </div>
-        <h2 class="modal-title success-title">Aktivasi Berhasil! 🎉</h2>
-        <p class="modal-desc">Terima kasih telah mendukung! Hasil perhitungan kamu sudah terbuka.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
