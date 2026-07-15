@@ -357,6 +357,7 @@ body {
   font-weight: 700;
   box-shadow: 0 4px 18px var(--accent-glow);
   grid-row: span 2;
+  height: 100%;
 }
 
 .key-equals:hover {
@@ -376,12 +377,17 @@ body {
 .key-func-sci:hover { background: #CDD1DF; }
 .fin-label { font-size: 11px; letter-spacing: 0.3px; }
 
-/* Sub-grid for last two rows (1,2,3 + 0,.) */
-.key-subgrid {
-  grid-column: 1 / 4;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.6fr 1fr;
-  gap: 8px;
+/* Alignments for flat grid layout */
+#sci-clear, #fin-clear {
+  grid-column-start: 1;
+}
+
+#key-1, #sci-1, #fin-1 {
+  grid-column-start: 1;
+}
+
+.key-wide {
+  grid-column: 1 / span 2;
 }
 
 /* =============================================
